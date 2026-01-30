@@ -1,0 +1,13 @@
+from sklearn.metrics import make_scorer
+
+def weighted_accuracy(y_true, y_pred):
+    weights = {0: 1, 1: 2}
+    correct = 0
+    total = 0
+    for yt, yp in zip(y_true, y_pred):
+        if yt == yp:
+            correct += weights[yt]
+        total += weights[yt]
+    return correct / total
+
+weighted_acc_scorer = make_scorer(weighted_accuracy)

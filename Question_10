@@ -1,0 +1,7 @@
+def summarize_prompt(article_text):
+    prompt = f"""
+    Summarize the following news article into 2 sentences.
+    If the summary exceeds 50 words, truncate it to the nearest complete sentence.
+    Article: {article_text}
+    """
+    return prompt

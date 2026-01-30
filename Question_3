@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Example DataFrame
+df = pd.DataFrame({"income": [50000, None, 60000, None, 55000]})
+
+skewness = df["income"].skew()
+
+if abs(skewness) < 0.5:
+    median_val = df["income"].median()
+    df["income"].fillna(median_val, inplace=True)
+else:
+    mode_val = df["income"].mode()[0]
+    df["income"].fillna(mode_val, inplace=True)
+
+print(df)

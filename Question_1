@@ -1,10 +1,12 @@
+# quick check for invalid ages in a list of dicts
 def validate_data(data):
-    invalid_entries = []
-    for entry in data:
-        if not isinstance(entry.get("age"), int):
-            invalid_entries.append(entry)
-    return invalid_entries
+    bad_entries = []
+    for row in data:
+        age_val = row.get("age")
+        # age should be an integer, otherwise mark it invalid
+        if not isinstance(age_val, int):
+            bad_entries.append(row)
+    return bad_entries
 
-# Example
-data = [{"name": "Alice", "age": 30}, {"name": "Bob", "age": "25"}]
-print(validate_data(data))  # [{'name': 'Bob', 'age': '25'}]
+sample = [{"name": "Alice", "age": 30}, {"name": "Bob", "age": "25"}]
+print("Invalid rows:", validate_data(sample))

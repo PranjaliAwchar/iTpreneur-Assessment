@@ -1,0 +1,11 @@
+import pandas as pd
+import re
+
+df = pd.DataFrame({"text": ["Hello World!", "Python@AI", "Data-Science!!"]})
+
+# Clean text
+df["text"] = df["text"].str.lower()
+df["text"] = df["text"].apply(lambda x: re.sub(r'[^a-z0-9\s]', '', x))
+df["tokens"] = df["text"].str.split()
+
+print(df)

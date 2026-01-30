@@ -1,0 +1,12 @@
+import json
+import requests
+
+query = "List 3 benefits of Python for data science."
+response = requests.post("https://api.gemini.com/generate", json={"query": query})
+
+try:
+    result = response.json()
+except json.JSONDecodeError:
+    result = {"error": "Invalid JSON response"}
+
+print(result)

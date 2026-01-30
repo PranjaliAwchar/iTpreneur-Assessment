@@ -6,7 +6,7 @@ Position: Python Developer (AI/ML)
 
 
 
-## 📌 Overview
+## Overview
 This repository contains solutions for the assignment test provided by **Evonence Pvt. Ltd, Pune**.  
 Each scenario is implemented in a separate Python file for clarity.
 
@@ -22,7 +22,14 @@ Each scenario is implemented in a separate Python file for clarity.
 - `Question_9` → Gemini API JSON handling
 - `Question_10` → Summarization with constraints
 
-## ⚙️ Requirements
+## Requirements
 Install dependencies before running:
 ```bash
 pip install -r requirements.txt
+
+
+## Requirements.txt includes:
+pandas
+scikit-learn
+tensorflow
+requests
